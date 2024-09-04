@@ -1,1 +1,68 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #2499ff, #00f2fe);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
 
+#display {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+    width: 300px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+#location {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#temperature {
+    font-size: 4em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#humidity {
+    font-size: 1.5em;
+    font-weight: 300;
+    color: #dfe6e9;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 600px) {
+    #display {
+        width: 80%;
+    }
+
+    #location {
+        font-size: 2em;
+    }
+
+    #temperature {
+        font-size: 3em;
+    }
+
+    #humidity {
+        font-size: 1.2em;
+    }
+}
