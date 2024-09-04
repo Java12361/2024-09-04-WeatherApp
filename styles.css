@@ -1,3 +1,4 @@
+/* BODY */
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
@@ -10,6 +11,7 @@ body {
     overflow: hidden;
 }
 
+/* DISPLAY */
 #display {
     background-color: rgba(255, 255, 255, 0.1);
     padding: 30px;
@@ -19,25 +21,40 @@ body {
     width: 300px;
     animation: fadeIn 1s ease-in-out;
 }
-
-#location {
-    font-size: 2.5em;
-    font-weight: bold;
+#display #myLocation {
+    font-size: 2em;
     margin-bottom: 10px;
 }
-
-#temperature {
-    font-size: 4em;
-    font-weight: bold;
-    margin-bottom: 20px;
+#display #location {
+    font-size: 1em;
 }
 
+/* TEMPERATURE */
+#temperatureContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+#temperatureContainer #temperature {
+    font-size: 4em;
+    font-weight: bold;
+}
+#temperatureContainer #temperatureIcon {
+    font-size: 2em;
+    margin-left: 5px;
+    position: relative;
+    top: -20px; /* Adjust this value to fine-tune the position */
+}
+
+/* HUMIDITY */
 #humidity {
     font-size: 1.5em;
     font-weight: 300;
     color: #dfe6e9;
 }
 
+/* FADING */
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -48,10 +65,13 @@ body {
         transform: translateY(0);
     }
 }
-
 @media (max-width: 600px) {
     #display {
         width: 80%;
+    }
+
+    #myLocation {
+        font-size: 3rem;
     }
 
     #location {
