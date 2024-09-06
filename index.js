@@ -13,18 +13,18 @@ fetch(apiUrl)
     return response.json();
   })
   .then(data => {
-    console.log(data);  // Log the full response from the API
-
-    const temperature = data.main.temp; // Temperature in Celsius
-    const description = data.weather[0].description; // Weather description
-    const location = data.name; // Location (city name)
+    console.log(data);
+    
+    const temperature = data.main.temp;
+    const description = data.weather[0].description;
+    const location = data.name;
 
     // Update the HTML elements with the API data
     locationElement.innerHTML = location;
-    temperatureElement.innerHTML = Math.round(temperature); // Round the temperature to avoid decimal points
-    humidityElement.innerHTML = description.charAt(0).toUpperCase() + description.slice(1); // Capitalize first letter of description
+    temperatureElement.innerHTML = Math.round(temperature);
+    humidityElement.innerHTML = description.charAt(0).toUpperCase() + description.slice(1); 
   })
   .catch(error => {
-    console.error('Error:', error); // Log the error if something goes wrong
+    console.error('Error:', error);
   });
 
